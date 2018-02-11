@@ -27,14 +27,12 @@ Then you can call logstash as follow :
 bin/logstash -f logstash-xml-false.conf
 ```
 
-here are the few first lines of the execution console :
+here are few lines of the execution console :
 
 <img src="./images/XML-one-record-per-line-console.png" width=100% align="middle" >
 
 
-
-
-Here is the result for the first line of the file :
+Here is the result for few lines in kibana :
 
 <img src="./images/XML-one-record-per-line.png" width=100% align="middle" >
 
