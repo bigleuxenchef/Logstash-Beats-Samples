@@ -124,6 +124,6 @@ filter {
 ```
 
 
-- [logstash configuration file - xml input](./conf/logstash-pom-xml.conf)
+- [FULL logstash configuration file - xml input](./conf/logstash-pom-xml.conf)
 
 
