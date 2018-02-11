@@ -1,0 +1,202 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>testjdbc</groupId>
+  <artifactId>testjdbc</artifactId>
+  <name>testjdbc</name>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-shade-plugin</artifactId>
+      	<version>2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>commons-cli</groupId>
+  		<artifactId>commons-cli</artifactId>
+  		<version>1.4</version>
+  	</dependency>
+  </dependencies>
+  <version>0.0</version>
+</project>
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.1</modelVersion>
+  <groupId>TTTtestjdbc2</groupId>
+  <artifactId>TTTtestjdbc2</artifactId>
+  <name>TTTtestjdbc2</name>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>r73.5.1</version>
+        <configuration>
+          <source>11.8</source>
+          <target>11.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-shade-plugin</artifactId>
+      	<version>2222.3</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>commons-cli</groupId>
+  		<artifactId>commons-cli</artifactId>
+  		<version>1.4</version>
+  	</dependency>
+  </dependencies>
+  <version>0.0</version>
+</project>
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>SparkElastic</groupId>
+  <artifactId>SparkElastic</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/com.github.fommil.netlib/all -->
+
+
+            	
+
+<dependency>
+    <groupId>com.github.scopt</groupId>
+    <artifactId>scopt_2.11</artifactId>
+    <version>3.5.0</version>
+</dependency>
+  
+  <dependency>
+    <groupId>org.elasticsearch</groupId>
+    <artifactId>elasticsearch-hadoop</artifactId>
+    <version>6.0.1</version>
+ 
+    <exclusions>
+    	<exclusion>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-log4j12</artifactId>
+    	</exclusion>
+    </exclusions>
+  </dependency>  
+<!--
+  <dependency>
+    <groupId>org.elasticsearch</groupId>
+    <artifactId>elasticsearch-spark-20_2.11</artifactId>
+    <version>5.6.4</version>
+</dependency>
+<dependency>
+    <groupId>org.elasticsearch</groupId>
+    <artifactId>elasticsearch-hadoop-hive</artifactId>
+    <version>5.6.4</version>
+</dependency>
+
+ -->
+<dependency>
+<groupId>org.scala-lang</groupId>
+<artifactId>scala-library</artifactId>
+<version>2.11.8</version>
+	<scope>provided</scope>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+
+<dependency>
+<groupId>org.apache.spark</groupId>
+      <artifactId>spark-core_2.11</artifactId>
+      <version>2.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-sql_2.11</artifactId>
+      <version>2.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-hive_2.11</artifactId>
+      <version>2.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-streaming_2.11</artifactId>
+      <version>2.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency> <!-- Spark dependency -->
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-mllib_2.11</artifactId>
+      <version>2.2.1</version>
+      <scope>provided</scope>
+    </dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-network-common_2.11</artifactId>
+    <version>2.2.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-mllib-local_2.11</artifactId>
+    <version>2.2.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-graphx_2.11</artifactId>
+    <version>2.2.1</version>
+</dependency>
+  </dependencies>
+  
+  
+  <properties>
+  	<scala.version>2.11.8</scala.version>
+  	<spark.version>2.2.1</spark.version>
+  	<hadoop.version>2.7.3</hadoop.version>
+  </properties>
+</project>
+
+
+
