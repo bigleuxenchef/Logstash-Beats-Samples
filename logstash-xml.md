@@ -111,8 +111,8 @@ filter {
         source => "message"
         force_array => false
     	target => "xml_content"
-	    xpath => ["project/modelVersion","modelVersion"]
-	    xpath => ["project/build/plugins","plugins"]
+        xpath => ["project/modelVersion","modelVersion"]
+        xpath => ["project/build/plugins","plugins"]
        }
      mutate {
         remove_field => [ "message" ]
