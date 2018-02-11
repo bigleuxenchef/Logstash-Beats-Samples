@@ -2,7 +2,7 @@
 
 ## Problem statement
 
-How can we push a xml file into elasticsearch in such a way that one xml file is cointained in one document or one record or elasticsesarch. However if one try to push any xml file as follow, elastic will create a record for each line :
+How can we push a xml file into elasticsearch in such a way that one xml file is cointained in one document or one record or elasticsesarch. However if one try to push any xml file as follow (file [here](./conf/logstash-xml-false.conf), elastic will create a record for each line :
 
 ```
 input {
