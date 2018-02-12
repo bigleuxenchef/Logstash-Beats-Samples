@@ -140,15 +140,18 @@ filter {
 
 ## XML in kibana
 
-Once XML has been mapped, any *xpath* becomes easy to used in any visualization.
+Once XML has been mapped, any *xpath* becomes easy to use in any visualization.
 
-as example in our example loading up [pom2.xml](./public/pom2.xml) we can do a pie chart highlights all dependencies in all project loaded :
+As example after loading up [pom2.xml](./public/pom2.xml) we can do a pie chart to highlight all dependencies in all projects loaded :
 
 <img src="./images/XML-Kibana-Stats.png" width=100% align="middle" >
 
-this example illustrate how to report on xml with arrays if needed, then we can easily filter in one particular part of the array if needed.
+You can have a look to the index structure either by looking at the pattern details or querying elastic with a curl command (not explained here).
 
-Kibana example can be loaded from files [Kibana-Dash-xml.json](./conf/Kibana-Dash-xml.json) and [Kibana-Visu-xml.json](./conf/Kibana-Visu-xml.json)
+
+This example illustrate how to report on xml with arrays if needed, then we can easily filter in one particular part of the array if needed.
+
+Kibana examples can be loaded from files [Kibana-Dash-xml.json](./conf/Kibana-Dash-xml.json) and [Kibana-Visu-xml.json](./conf/Kibana-Visu-xml.json)
 
 
 
