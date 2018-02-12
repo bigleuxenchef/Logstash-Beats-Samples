@@ -105,6 +105,14 @@ Note: some fields and tags have been removed to help the reading of the record.
 
 #### Advanced mapping
 
+Here under several examples to show what it means to use *xpath* option.
+
+- *store_xml* will keep the whole xml intact in one field
+- *force_array* option when sets to true will make all option in the *xpath* being an array. set to false will do the opposite exceting for real array.
+- *remove_namespaces* make sure there is not conflict with *namespace* mapping and *xpath* mapping under. Try with and without and you will notice the difference
+- *mutate* with *remove_field* will eliminate field from the document, in this case we remove the whole message, otherwise they would be a field contening the text of the whole xml (then duplicating the message content). Same idea with *remove_tag*.
+
+
 ```
 filter {
       xml {
@@ -112,8 +120,11 @@ filter {
         source => "message"
         force_array => false
     	target => "xml_content"
-        xpath => ["project/modelVersion","modelVersion"]
-        xpath => ["project/build/plugins","plugins"]
+        remove_namespaces => true
+        xpath => [ "/project/artifactId/text()" , "ART" ]
+        xpath => ["project/modelVersion","MymodelVersion"]
+        xpath => ["project/modelVersion/text()","MymodelVersioniText"]
+        xpath => ["project/build/plugins","PLUGINS"]
        }
      mutate {
         remove_field => [ "message" ]
@@ -125,5 +136,20 @@ filter {
 
 
 - [FULL logstash configuration file - xml input](./conf/logstash-pom-xml.conf)
+- [different version logstash configuration file - xml input](./conf/logstash-pom-xml-2.conf) : interesting as it shows that xml could be nested even though of little interest in this case.
+
+## XML in kibana
+
+Once XML has been mapped, any *xpath* becomes easy to used in any visualization.
+
+as example in our example loading up [pom2.xml](./public/pom2.xml) we can do a pie chart highlights all dependencies in all project loaded :
+
+<img src="./images/XML-Kibana-Stats.png" width=100% align="middle" >
+
+this example illustrate how to report on xml with arrays if needed, then we can easily filter in one particular part of the array if needed.
+
+Kibana example can be loaded from files [Kibana-Dash-xml.json](./conf/Kibana-Dash-xml.json) and [Kibana-Visu-xml.json](./conf/Kibana-Visu-xml.json)
+
+
 
 
