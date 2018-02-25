@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.dltk.ruby.core.nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>logstash-dynatrace.conf</name>
-			<type>1</type>
-			<location>/usr/local/Cellar/logstash/6.2.2/libexec/logstash-dynatrace.conf</location>
-		</link>
-	</linkedResources>
 </projectDescription>
