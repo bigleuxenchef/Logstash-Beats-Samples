@@ -84,7 +84,7 @@ The transformation is quite straight forward, only point to notice is the 3 nest
 > Note: we have decided that we will not use any auto-formating feature from xslt, We wpoiuld like to keep the control on what will go on one line in order to control the way logstash will process the file. Without using the multiline codec, logstash process any text filr by considering one line as a record, in that respect, we need to make sure that the transformation process in xslt does not split line in an undesire way.
 
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 2018 rumi -->
 <xsl:stylesheet version="1.0"
