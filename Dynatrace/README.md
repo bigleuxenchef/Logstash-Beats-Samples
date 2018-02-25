@@ -64,11 +64,15 @@ How to integrate a **file** coming from the extraction of dynatrace aggregated s
 
 > In my conversation with my colleague who was attempting to integrate the data here above, it was apparent to me that if the problem is to integrate a xml file into elastic through logstash, there maybe other solution than trying hard to solve the problem with all the various logstash tools available like ruby, xml/xpath plugin. This is not to say that logstash is not able to manage it, I am a fan of the eco-system that I consider as important as elastic engine itself.
 
-Here is the approach I have adopted to solve the problem :
+Here is the approach we have adopted to solve the problem :
 
-- As my source file is a xml, I thought that using xslt could be a good approach to get my file in order to be best ingested by logdtash and then elastic.
-- 
-- If I were to transform the xml file before hitting logstash, I wanted to avoid using the multiline codec as much as possiblke with my new transform file as it was done [here](../../logstash-xml.md). 
+- As our source file is a xml, why not trying to use xslt to get our file in order first.
+- If we were to transform the xml file before hitting logstash, we may want to avoid using the multiline codec as much as possible with our new transformed file as it was done [here](../../logstash-xml.md). In order to achieve the smoothest ingest process, the data could be de-normalize in such a way that the relevant context is carry along with each record (e.g. user, report title).
+- then we can let anyone creating the pipeline to grab the file, transform it and then ingesting it into logstash. A quick ruby program will highlight how to invoke xslt on the filr first, from there anyone can build the pipeline (push, pull, scheduling etc ...).
+
+
+
+
 
 
 
