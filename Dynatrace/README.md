@@ -158,6 +158,8 @@ print out;
 
 ```
 
+>Note 
+
 ## The result
 
 The result is just a series of one line record in xml format, beautifully formatted to go straight to logstash.
@@ -222,7 +224,7 @@ output {
         hosts => "http://${ELKMASTERHOSTNAME:mbp15.local}:${ELKMASTERPORT:9200}"
         index => "%{type}-%{+YYYY.MM.dd}"
         user => elastic
-        password => changeme
+        password => "${ES_PWD}"
     }
   stdout { codec => rubydebug }
 }
