@@ -124,15 +124,15 @@ The transformation is quite straight forward, only point to notice is the 3 nest
 
 From the editor, right mouse click then click on Run As -> Run Configuration like here under
 
-<img src="./images/Eclipse- Run As - Run Configuration.png" width=100% align="middle" >
+<img src="./images/Eclipse- Run As - Run Configuration.png" width=75% align="middle" >
 
 Then you you can create a new configuration and fill the blank as described below :
 
-<img src="./images/Eclipse-Run Config- xslt - main.png" width=100% align="middle" >
+<img src="./images/Eclipse-Run Config- xslt - main.png" width=75% align="middle" >
 
-<img src="./images/Eclipse-Run Config- xslt -output.png" width=100% align="middle" >
+<img src="./images/Eclipse-Run Config- xslt -output.png" width=75% align="middle" >
 
-<img src="./images/Eclipse-Run Config- xslt -Processor.png" width=100% align="middle" >
+<img src="./images/Eclipse-Run Config- xslt -Processor.png" width=75% align="middle" >
 
 > Note : you can eother use the eclipse native xslt processor or take Xalan ( :heart_eyes:)
 
@@ -158,7 +158,75 @@ print out;
 
 ```
 
+## The result
+
+The result is just a series of one line record in xml format, beautifully formatted to go straight to logstash.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?><measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510722000000" avg="1255.7346063912705" min="17.810747146606445" max="15378.7333984375" sum="1611107.5" count="1283" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510808400000" avg="1364.9752635847526" min="47.586570739746094" max="8342.779296875" sum="1683014.5" count="1233" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510894800000" avg="1574.1275022747952" min="24.8994197845459" max="36158.0625" sum="1729966.125" count="1099" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510981200000" avg="1785.78759765625" min="1075.2763671875" max="2588.27978515625" sum="10714.7255859375" count="6" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510722000000" avg="2923.011962890625" min="2923.011962890625" max="2923.011962890625" sum="2923.011962890625" count="1288" aggregation="95th Percentile" unit="ms"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510808400000" avg="3124.757080078125" min="3124.757080078125" max="3124.757080078125" sum="3124.757080078125" count="1233" aggregation="95th Percentile" unit="ms"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510894800000" avg="2692.88232421875" min="2692.88232421875" max="2692.88232421875" sum="2692.88232421875" count="1099" aggregation="95th Percentile" unit="ms"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1510981200000" avg="1765.0831298828125" min="1765.0831298828125" max="1765.0831298828125" sum="1765.0831298828125" count="6" aggregation="95th Percentile" unit="ms"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517007600000" avg="357.03397487153944" min="185.43829345703125" max="6806.4931640625" sum="106396.12451171875" count="298" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517029200000" avg="7011.71328125" min="319.715087890625" max="21073.587890625" sum="35058.56640625" count="5" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517050800000" avg="613.9712068256579" min="167.7206268310547" max="11482.5390625" sum="116654.529296875" count="190" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517072400000" avg="421.24826204978814" min="52.342044830322266" max="19486.615234375" sum="99414.58984375" count="236" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517094000000" avg="355.8650764016544" min="208.74412536621094" max="1536.4691162109375" sum="6049.706298828125" count="17" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517137200000" avg="377.6945511390423" min="167.09332275390625" max="3922.95068359375" sum="21906.283966064453" count="58" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517158800000" avg="392.81637739701705" min="168.7490692138672" max="12417.1982421875" sum="86419.60302734375" count="220" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517180400000" avg="432.8554992675781" min="335.8668518066406" max="542.0620727539062" sum="1298.5664978027344" count="3" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517202000000" avg="339.30517578125" min="289.1710205078125" max="436.0088195800781" sum="1696.52587890625" count="5" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517223600000" avg="494.6912931995259" min="5.351944923400879" max="140278.15625" sum="2195934.6505126953" count="4439" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517245200000" avg="489.8069825351344" min="18.695018768310547" max="140288.3125" sum="3589795.375" count="7329" aggregation="Count" unit="num"/>
+<measurement name="test-RichClient7.0_TRIAL_20181130" user="Joe Do" timestamp="1517266800000" avg="478.64735061453973" min="192.24964904785156" max="14711.0693359375" sum="228793.43359375" count="478" aggregation="Count" unit="num"/>
+```
 
 
+## Logstash configuration
 
+```
+# rumi 2018
+
+input {
+file {
+    path => [ "${INPUTDIRECTORY}/dynatrace.out.xml" ]
+    start_position => "beginning"
+    sincedb_path => "/dev/null"
+    type => "dynatrace"
+         }
+  }
+filter {
+      xml {
+        store_xml => "true"
+        source => "message"
+	force_array => false
+    	target => "xml_content"
+	remove_namespaces => true
+	xpath => ["measurement/@timestamp","TS"]
+       }
+
+date {
+        match => ["TS[0]","UNIX_MS"]
+        target => "TimeStamp"
+    }
+
+
+    }
+
+output {
+    elasticsearch { 
+        hosts => "http://${ELKMASTERHOSTNAME:mbp15.local}:${ELKMASTERPORT:9200}"
+        index => "%{type}-%{+YYYY.MM.dd}"
+        user => elastic
+        password => changeme
+    }
+  stdout { codec => rubydebug }
+}
+
+
+```
 
