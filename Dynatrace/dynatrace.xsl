@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 2018 rumi -->
+<!--  
+We decide not to use the auto formatting, in order to control what will go on one line. This is to avoid line to be unnecessarily split
+which can cause later some challenges with the pipeline like logstash that ingest one line at the time.
+<xsl:output method="text" indent="yes" xalan:indent-amount="4"/>
+-->
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 

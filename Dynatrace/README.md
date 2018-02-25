@@ -1,5 +1,12 @@
 # Integration of *dynatrace* reporting aggregation into elastic
 
+## Required tools 
+
+This workshop has been accomplished all in eclipse:
+
+- eclipse with ruby plugin, xalan plugin and xml plugin.
+- [ruby xslt](https://github.com/glejeune/ruby-xslt)
+
 ## Description of the problem
 
 How to integrate a **file** coming from the extraction of dynatrace aggregated statistics, such as [here for details](./dynatrace.xml), here is a snippet
@@ -69,6 +76,49 @@ Here is the approach we have adopted to solve the problem :
 - As our source file is a xml, why not trying to use xslt to get our file in order first.
 - If we were to transform the xml file before hitting logstash, we may want to avoid using the multiline codec as much as possible with our new transformed file as it was done [here](../../logstash-xml.md). In order to achieve the smoothest ingest process, the data could be de-normalize in such a way that the relevant context is carry along with each record (e.g. user, report title).
 - then we can let anyone creating the pipeline to grab the file, transform it and then ingesting it into logstash. A quick ruby program will highlight how to invoke xslt on the filr first, from there anyone can build the pipeline (push, pull, scheduling etc ...).
+
+## XSLT transformation
+
+The transformation is quite straight forward, only point to notice is the 3 nested *for-each* loop to navigate the xml as well as the global variables being used to implement the de-normalization of the data. 
+
+> Note: we have decided that we will not use any auto-formating feature from xslt, We wpoiuld like to keep the control on what will go on one line in order to control the way logstash will process the file. Without using the multiline codec, logstash process any text filr by considering one line as a record, in that respect, we need to make sure that the transformation process in xslt does not split line in an undesire way.
+
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2018 rumi -->
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+	<xsl:variable name="newline">
+		<xsl:text>
+</xsl:text>
+	</xsl:variable>
+	<xsl:template match="/">
+		<xsl:variable name="dashname" select="dashboardreport/@name" />
+		<xsl:variable name="user"
+			select="dashboardreport/reportheader/reportdetails/user/text()" />
+		<xsl:for-each select="dashboardreport/data/chartdashlet/measures/measure">
+			<xsl:for-each select="measure">
+				<xsl:variable name="aggregation" select="@aggregation" />
+				<xsl:variable name="unit" select="@unit" />
+				<xsl:for-each select="measurement">
+					<xsl:copy>
+						<xsl:copy-of select="$dashname" />
+						<xsl:attribute name="user">
+							<xsl:copy-of select="$user" />
+						</xsl:attribute>
+						<xsl:copy-of select="@*" />
+						<xsl:copy-of select="$aggregation" />
+						<xsl:copy-of select="$unit" />
+					</xsl:copy>
+					<xsl:value-of select="$newline" />
+				</xsl:for-each>
+			</xsl:for-each>
+		</xsl:for-each>
+	</xsl:template>
+</xsl:stylesheet>
+```
 
 
 
