@@ -139,10 +139,24 @@ Then you you can create a new configuration and fill the blank as described belo
 
 ### Running xslt from Ruby script
 
-> Note you can do like me, use eclipse as a REAL IDE ( :stuck_out_tongue_winking_eye:), as example here are the perspective I use simultaneously in eclipse. It has been proven to me very stable overtime and very convenient when managing many different kind of technology
+> Note you can do like me, use eclipse as a REAL IDE ( :stuck_out_tongue_winking_eye:), as example here are the perspective I use simultaneously in eclipse. It has been proven to me very stable overtime and very convenient when managing many different kind of technology. 
 
 <img src="./images/Eclipse THE REAL IDE.png" width=100% align="middle" >
 
+
+```ruby
+
+# 2018 rumi
+require 'xml/xslt'
+
+xslt = XML::XSLT.new()
+xslt.xml = "dynatrace.xml"
+xslt.xsl = "dynatrace.xsl"
+
+out = xslt.serve()
+print out;
+
+```
 
 
 
