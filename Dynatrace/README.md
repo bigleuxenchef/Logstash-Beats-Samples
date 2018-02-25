@@ -120,6 +120,10 @@ The transformation is quite straight forward, only point to notice is the 3 nest
 </xsl:stylesheet>
 ```
 
+### Running xslt from eclipse is easy
+
+
+<img src="./images/Eclipse-Run Config- xslt - main.png" width=100% align="middle" >
 
 
 

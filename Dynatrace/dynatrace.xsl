@@ -7,7 +7,7 @@ which can cause later some challenges with the pipeline like logstash that inges
 -->
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
+<!-- Don't touch the next three lines, they should be on 3 different lines and indentation should be kept as is -->
 	<xsl:variable name="newline">
 		<xsl:text>
 </xsl:text>
