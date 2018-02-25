@@ -62,7 +62,7 @@ How to integrate a **file** coming from the extraction of dynatrace aggregated s
 
 ```
 
-> In my conversation with my colleague who was attempting to integrate the data here above, it was appaarent to me that if the problem is to integrate a xml file into elastic through logstash, there maybe other solution than trying hard to solve the problem with all the various logstash tools available like ruby, xml/xpath plugin. This is not to say that logstash is not akle to manage it, I am a fan of the eco-system that I consider as important as elastic engine itself.
+> In my conversation with my colleague who was attempting to integrate the data here above, it was apparent to me that if the problem is to integrate a xml file into elastic through logstash, there maybe other solution than trying hard to solve the problem with all the various logstash tools available like ruby, xml/xpath plugin. This is not to say that logstash is not able to manage it, I am a fan of the eco-system that I consider as important as elastic engine itself.
 
 Here is the approach I have adopted to solve the problem :
 
