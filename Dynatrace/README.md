@@ -122,10 +122,26 @@ The transformation is quite straight forward, only point to notice is the 3 nest
 
 ### Running xslt from eclipse is easy
 
+From the editor, right mouse click then click on Run As -> Run Configuration like here under
+
+<img src="./images/Eclipse- Run As - Run Configuration.png" width=100% align="middle" >
+
+Then you you can create a new configuration and fill the blank as described below :
 
 <img src="./images/Eclipse-Run Config- xslt - main.png" width=100% align="middle" >
 
+<img src="./images/Eclipse-Run Config- xslt -output.png" width=100% align="middle" >
 
+<img src="./images/Eclipse-Run Config- xslt -Processor.png" width=100% align="middle" >
+
+> Note : you can eother use the eclipse native xslt processor or take Xalan ( :heart_eyes:)
+
+
+### Running xslt from Ruby script
+
+> Note you can do like me, use eclipse as a REAL IDE ( :stuck_out_tongue_winking_eye:), as example here are the perspective I use simultaneously in eclipse. It has been proven to me very stable overtime and very convenient when managing many different kind of technology
+
+<img src="./images/Eclipse THE REAL IDE.png" width=100% align="middle" >
 
 
 
