@@ -190,6 +190,8 @@ The result is just a series of one line record in xml format, beautifully format
 
 ## Logstash configuration
 
+As the file has been well prepared, it is easy to ingest with logstash by using the xml plugin as well as date plugin.
+
 ```
 # rumi 2018
 
