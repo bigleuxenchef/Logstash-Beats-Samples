@@ -238,6 +238,13 @@ output {
 
 > Note : as highlighted in the previous section on logstash configuration, we have now created an index in elasticsearch that has not only the meta data *@timestamp* which is the time when the record gets into elastic, we have now another sort of timestamp that we have called *TimeStamp* which is the time and date when dynatrace generated its line of statistic called *measurement*.
 
+Let's create the index pattern as follow :
+
+
+<img src="./images/Kibana-create-index-pattern.png" width=75% align="middle" >
+
+
+## Kibana Visualization
 
 
 
