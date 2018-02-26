@@ -211,13 +211,18 @@ filter {
     	target => "xml_content"
 	remove_namespaces => true
 	xpath => ["measurement/@timestamp","TS"]
+	xpath => ["measurement/@avg","m_avg"]
+	xpath => ["measurement/@count","m_count"]
        }
 
 date {
         match => ["TS[0]","UNIX_MS"]
         target => "TimeStamp"
     }
-
+mutate {
+    convert => { "m_avg[0]" => "float" }
+    convert => { "m_count[0]" => "integer" }
+  }
 
     }
 
@@ -230,8 +235,6 @@ output {
     }
   stdout { codec => rubydebug }
 }
-
-
 ```
 
 ## Kibana Index Pattern
