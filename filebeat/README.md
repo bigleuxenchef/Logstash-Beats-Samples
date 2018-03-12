@@ -48,19 +48,33 @@ use case 10000 files of 32k each
 
 ### use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).
 
-slow down scan_frequency
-scan_frequency: 10s
-
-slow down how often to check if the file has been updated.
-backoff: 1s
-
-max_backoff: 10s
-
-number of file harvest at the same time
-harvester_limit: 0
+```
+#slow down scan_frequency
+  scan_frequency: 5m
+# slow down how often to check if the file has been updated.
+  backoff: 5m
+  max_backoff: 1h
+# number of file harvest at the same time
+  harvester_limit: 0
 # close the file when reaching EOF
-close_eof: false
+  close_eof: true
+```
 
+#### Profile
+
+
+<img src="./images/Profile3_P_W20.png" width=100% align="middle" >
+
+#### Elastic performance
+
+<img src="./images/Elastic3_Perf_W20.png" width=100% align="middle" >
+
+
+#### Filebeat performance
+
+
+
+<img src="./images/Filebeat3_Perf_W20.png" width=100% align="middle" >
 
 
 
