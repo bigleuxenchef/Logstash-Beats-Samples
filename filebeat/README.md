@@ -76,7 +76,13 @@ use case 10000 files of 32k each
 
 <img src="./images/Filebeat3_Perf_W20.png" width=100% align="middle" >
 
+# use case #4 : same as before but running more than one filebeat
 
+In an attempt to improve filebeat performance, the test below summarizes the result with 2, 3 filebeats running as well as running multiple prospectors to see if filebeat sacales well when seggregating on multiple prospectors. Read the chart and draw your own conclusion. 
+
+
+
+<img src="./images/filebeats_multiple.png" width=100% align="middle" >
 
 
 
