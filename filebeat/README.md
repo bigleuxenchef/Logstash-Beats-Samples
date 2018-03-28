@@ -91,3 +91,6 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 <img src="./images/Filebeat4_Perf_W20.png" width=100% align="middle" >
 
 
+
+
+
