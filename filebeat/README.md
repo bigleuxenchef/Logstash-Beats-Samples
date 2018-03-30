@@ -1,3 +1,28 @@
+
+
+<!-- TOC -->
+
+- [*filebeat* Samples](#filebeat-samples)
+    - [Context](#context)
+    - [Performance *filebeat* : ingesting 10000 files](#performance-filebeat--ingesting-10000-files)
+        - [use case #1 : 1 worker, default bulk size](#use-case-1--1-worker-default-bulk-size)
+            - [Profile](#profile)
+            - [Elastic performance](#elastic-performance)
+            - [Filebeat performance](#filebeat-performance)
+        - [use case #2 : 20 workers,  bulk size 5000](#use-case-2--20-workers--bulk-size-5000)
+            - [Profile](#profile-1)
+            - [Elastic performance](#elastic-performance-1)
+            - [Filebeat performance](#filebeat-performance-1)
+        - [use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).](#use-case-3--20-worker-bulk-size-unlimited-aka-higher-than--of-records-to-ingest)
+            - [Profile](#profile-2)
+            - [Elastic performance](#elastic-performance-2)
+            - [Filebeat performance](#filebeat-performance-2)
+- [use case #4 : same as before but running more than one filebeat](#use-case-4--same-as-before-but-running-more-than-one-filebeat)
+            - [Profile](#profile-3)
+            - [Filebeat performance](#filebeat-performance-3)
+
+<!-- /TOC -->
+
 # *filebeat* Samples
 
 ## Context
