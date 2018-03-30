@@ -5,22 +5,22 @@
 - [*filebeat* Samples](#filebeat-samples)
     - [Context](#context)
     - [Performance *filebeat* : ingesting 10000 files](#performance-filebeat--ingesting-10000-files)
-        - [use case #1 : 1 worker, default bulk size](#use-case-1--1-worker-default-bulk-size)
+        - [Use case #1 : 1 worker, default bulk size](#use-case-1--1-worker-default-bulk-size)
             - [Profile](#profile)
             - [Elastic performance](#elastic-performance)
             - [Filebeat performance](#filebeat-performance)
-        - [use case #2 : 20 workers,  bulk size 5000](#use-case-2--20-workers--bulk-size-5000)
+        - [Use case #2 : 20 workers,  bulk size 5000](#use-case-2--20-workers--bulk-size-5000)
             - [Profile](#profile-1)
             - [Elastic performance](#elastic-performance-1)
             - [Filebeat performance](#filebeat-performance-1)
-        - [use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).](#use-case-3--20-worker-bulk-size-unlimited-aka-higher-than--of-records-to-ingest)
+        - [Use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).](#use-case-3--20-worker-bulk-size-unlimited-aka-higher-than--of-records-to-ingest)
             - [Profile](#profile-2)
             - [Elastic performance](#elastic-performance-2)
             - [Filebeat performance](#filebeat-performance-2)
-- [use case #4 : same as before but running more than one filebeat or more than one prospector](#use-case-4--same-as-before-but-running-more-than-one-filebeat-or-more-than-one-prospector)
+        - [Use case #4 : same as before but running more than one filebeat or more than one prospector](#use-case-4--same-as-before-but-running-more-than-one-filebeat-or-more-than-one-prospector)
             - [Profile](#profile-3)
             - [Filebeat performance](#filebeat-performance-3)
-- [Use case #5 : aggregating the files using unix script than ingesting the consolidated file.](#use-case-5--aggregating-the-files-using-unix-script-than-ingesting-the-consolidated-file)
+        - [Use case #5 : aggregating the files using unix script than ingesting the consolidated file.](#use-case-5--aggregating-the-files-using-unix-script-than-ingesting-the-consolidated-file)
 
 <!-- /TOC -->
 
@@ -36,7 +36,7 @@ One of the problem that we face is how to push a high number of files into elast
 use case 10000 files of 32k each
 
 
-### use case #1 : 1 worker, default bulk size
+### Use case #1 : 1 worker, default bulk size
 
 #### Profile
 
@@ -54,7 +54,7 @@ use case 10000 files of 32k each
 
 
 
-### use case #2 : 20 workers,  bulk size 5000
+### Use case #2 : 20 workers,  bulk size 5000
 
 #### Profile
 
@@ -77,7 +77,7 @@ use case 10000 files of 32k each
 
 
 
-### use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).
+### Use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).
 
 ```
 #slow down scan_frequency
@@ -107,7 +107,7 @@ use case 10000 files of 32k each
 
 <img src="./images/Filebeat3_Perf_W20.png" width=100% align="middle" >
 
-# use case #4 : same as before but running more than one filebeat or more than one prospector
+### Use case #4 : same as before but running more than one filebeat or more than one prospector
 
 In an attempt to improve filebeat performance, the test below summarizes the result with 2, 3 filebeats running as well as running multiple prospectors to see if filebeat scales well when segregating on multiple prospectors. Read the chart and draw your own conclusion. 
 
@@ -122,7 +122,7 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 <img src="./images/Filebeat4_Perf_W20.png" width=100% align="middle" >
 
 
-# Use case #5 : aggregating the files using unix script than ingesting the consolidated file.
+### Use case #5 : aggregating the files using unix script than ingesting the consolidated file.
 
 
 
