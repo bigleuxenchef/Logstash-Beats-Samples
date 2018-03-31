@@ -132,9 +132,6 @@ The test have been made wit h20 workers however increasing the number may not ne
 
 <img src="./images/Profile3fb_4w-20w.png" width=100% align="middle" >
 
-
-
-
 ### Use case #5 : aggregating the files using unix script than ingesting the consolidated file.
 
 #### one worker and bulk_size 50
