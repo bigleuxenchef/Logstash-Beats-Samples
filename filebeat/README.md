@@ -260,4 +260,8 @@ echo "runtime: ${totaltime} seconds"
 
 Several configuration files have been provided [here](./conf)
 
+- Launching 1 filebeat with 2 prospectors by using `filebeat.yml`
+- Launching 2 filebeats by using file `filebeat0-4.yml` and `filebeat5-9.yml`
+- Launching 3 filebeats by using file `filebeat0-3.yml`, `filebeat4-6.yml` and `filebeat7-9.yml`
+- Launching 1 filebeat by using `filebeat-single-file.yml` and varying number of `workers`s and `bulk_size`.
  
