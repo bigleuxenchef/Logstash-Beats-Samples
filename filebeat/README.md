@@ -38,6 +38,10 @@
             - [Varying Bulk_size with 4-16 workers](#varying-bulk_size-with-4-16-workers)
                 - [Profile](#profile-9)
                 - [Filebeat performance](#filebeat-performance-9)
+    - [Configuration file and tools](#configuration-file-and-tools)
+        - [Generate 10000 files easily](#generate-10000-files-easily)
+        - [Concatenate 10000 files into one easily](#concatenate-10000-files-into-one-easily)
+        - [Configuration files](#configuration-files)
 
 <!-- /TOC -->
 
@@ -182,3 +186,11 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 ##### Filebeat performance
 
 <img src="./images/Filebeat5_bulksize.png" width=100% align="middle" >
+
+## Configuration file and tools
+
+### Generate 10000 files easily
+
+### Concatenate 10000 files into one easily
+
+### Configuration files
