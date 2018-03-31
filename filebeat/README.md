@@ -191,6 +191,73 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 ### Generate 10000 files easily
 
+Here is a basic script that allows to create copies from an existing file. This script has been used to created 10000 files from the same file. There are many other ways to do here is one way.
+
+Script here under or [here](./src/duplicates_files.sh)
+
+```bash
+#!/usr/bin/env bash
+# rumi 2018
+
+# usage : duplicates_files.sh <file>
+# generate in the same folder as <file> 10000 files like <file><number from 1 to 10000> 
+usage()
+{
+    echo "usage: duplicates_files.sh [-f <file>] [-n <number of file to create:default 10>]| [-h]]"
+}
+
+NUMBER_OF_COPY=10 #Default value
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -f | --file )		shift
+				INPUTFILE=$1
+                                ;;
+        -n | --number-of-copy ) shift
+				NUMBER_OF_COPY=$1
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
+
+for (( i=1; i<=$NUMBER_OF_COPY; i++))
+	do
+		echo -ne "Number $i  $INPUTFILE$i \r"
+		cp $INPUTFILE $INPUTFILE$i
+	done
+echo -e "\n\ndone !"
+```
+
 ### Concatenate 10000 files into one easily
 
+In order to compare the capabilities of filebeat by processing 10000 files or the aggregation of the 10000 files into one, here is a simple script that concatenate the 10000 files :
+
+```bash
+#!/usr/bin/env bash 
+# rumi 2018
+# catall.sh <arg1> <arg2>
+# <arg1> : path where all files need to be aggregated
+# <arg2> : targetfile to contain all aggregated files from path in <arg1>
+
+timestamp=$(date +%s)
+
+echo "source directory $1 ..."
+
+basetime=$(date +%s)
+ls -l1 $1| xargs -P8 -I file cat $1/file > $2
+totaltime=$(echo "($(date +%s) - ${basetime})" | bc)
+echo "runtime: ${totaltime} seconds"
+```
+
+
+
 ### Configuration files
+
+Several configuration files have been provided [here](./conf)
+
+ 
