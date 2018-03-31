@@ -19,17 +19,18 @@
         - [Use case #4 : same as before but running more than one filebeat or more than one prospector](#use-case-4--same-as-before-but-running-more-than-one-filebeat-or-more-than-one-prospector)
             - [Profile](#profile-3)
             - [Filebeat performance](#filebeat-performance-3)
+            - [Tuning the number of workers](#tuning-the-number-of-workers)
         - [Use case #5 : aggregating the files using unix script than ingesting the consolidated file.](#use-case-5--aggregating-the-files-using-unix-script-than-ingesting-the-consolidated-file)
             - [one worker and bulk_size 50](#one-worker-and-bulk_size-50)
                 - [Profile](#profile-4)
                 - [Filebeat performance](#filebeat-performance-4)
-            - [worker and bulk_size 50](#worker-and-bulk_size-50)
+            - [4 worker and bulk_size 50](#4-worker-and-bulk_size-50)
                 - [Profile](#profile-5)
                 - [Filebeat performance](#filebeat-performance-5)
-            - [worker and bulk_size 50](#worker-and-bulk_size-50-1)
+            - [16 worker and bulk_size 50](#16-worker-and-bulk_size-50)
                 - [Profile](#profile-6)
                 - [Filebeat performance](#filebeat-performance-6)
-            - [worker and bulk_size 50](#worker-and-bulk_size-50-2)
+            - [32 worker and bulk_size 50](#32-worker-and-bulk_size-50)
                 - [Profile](#profile-7)
                 - [Filebeat performance](#filebeat-performance-7)
             - [Side by Side](#side-by-side)
@@ -125,6 +126,11 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 <img src="./images/Filebeat4_Perf_W20.png" width=100% align="middle" >
 
+#### Tuning the number of workers
+
+The test have been made wit h20 workers however increasing the number may not necessarily be the solution, it will depends on various factors, for that it is recommended to test several options. As example, even though all test have been done wit h20 workers, here is an example with running 3 filebeats with each 4 workers instead of 20 like before, you will see that the overall running time has improved.
+
+
 ### Use case #5 : aggregating the files using unix script than ingesting the consolidated file.
 
 #### one worker and bulk_size 50
@@ -137,7 +143,7 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 <img src="./images/Filebeat5_1W.png" width=100% align="middle" >
 
-#### worker and bulk_size 50
+#### 4 worker and bulk_size 50
 
 ##### Profile
 
@@ -147,7 +153,7 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 <img src="./images/Filebeat5_4W.png" width=100% align="middle" >
 
-#### worker and bulk_size 50
+#### 16 worker and bulk_size 50
 
 ##### Profile
 
@@ -157,7 +163,7 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 <img src="./images/Filebeat5_16W.png" width=100% align="middle" >
 
-#### worker and bulk_size 50
+#### 32 worker and bulk_size 50
 
 ##### Profile
 
