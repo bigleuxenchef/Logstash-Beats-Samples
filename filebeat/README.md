@@ -14,13 +14,6 @@
             - [Elastic performance](#elastic-performance-1)
             - [Filebeat performance](#filebeat-performance-1)
         - [Use case #3 : 20 worker, bulk size unlimited (aka higher than # of records to ingest).](#use-case-3--20-worker-bulk-size-unlimited-aka-higher-than--of-records-to-ingest)
-            - [Profile](#profile-2)
-            - [Elastic performance](#elastic-performance-2)
-            - [Filebeat performance](#filebeat-performance-2)
-        - [Use case #4 : same as before but running more than one filebeat or more than one prospector](#use-case-4--same-as-before-but-running-more-than-one-filebeat-or-more-than-one-prospector)
-            - [Profile](#profile-3)
-            - [Filebeat performance](#filebeat-performance-3)
-        - [Use case #5 : aggregating the files using unix script than ingesting the consolidated file.](#use-case-5--aggregating-the-files-using-unix-script-than-ingesting-the-consolidated-file)
 
 <!-- /TOC -->
 
@@ -89,7 +82,9 @@ use case 10000 files of 32k each
   harvester_limit: 0
 # close the file when reaching EOF
   close_eof: true
-```
+# close file when being inactive for 1 min
+  close_inactive: 1m
+ ```
 
 #### Profile
 
@@ -123,6 +118,23 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 
 ### Use case #5 : aggregating the files using unix script than ingesting the consolidated file.
+
+#### one worker and bulk_size 50
+##### Profile
+
+<img src="./images/Profile5_1W.png" width=100% align="middle" >
+
+##### Filebeat performance
+
+<img src="./images/Filebeat5_1W.png" width=100% align="middle" >
+
+
+#### 4 worker and bulk_size 50
+
+
+#### 8 worker and bulk_size 50
+
+#### 16 worker and bulk_size 50
 
 
 
