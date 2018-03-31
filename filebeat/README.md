@@ -131,11 +131,46 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 #### 4 worker and bulk_size 50
 
+##### Profile
 
-#### 8 worker and bulk_size 50
+<img src="./images/Profile5_4W.png" width=100% align="middle" >
+
+##### Filebeat performance
+
+<img src="./images/Filebeat5_4W.png" width=100% align="middle" >
 
 #### 16 worker and bulk_size 50
 
+##### Profile
+
+<img src="./images/Profile5_16W.png" width=100% align="middle" >
+
+##### Filebeat performance
+
+<img src="./images/Filebeat5_16W.png" width=100% align="middle" >
+
+
+#### 32 worker and bulk_size 50
+
+##### Profile
+
+<img src="./images/Profile5_32W.png" width=100% align="middle" >
+
+##### Filebeat performance
+
+<img src="./images/Filebeat5_32W.png" width=100% align="middle" >
+
+
+#### Side by Side
+
+
+##### Profile
+
+<img src="./images/Profile5_SBS.png" width=100% align="middle" >
+
+##### Filebeat performance
+
+<img src="./images/Filebeat5_SBS.png" width=100% align="middle" >
 
 
 
