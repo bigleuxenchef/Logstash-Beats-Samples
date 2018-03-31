@@ -30,24 +30,17 @@ filebeat.prospectors:
    # - /usr/local/var/*log
    # - /usr/local/var/log/*/*log
    #  ['\/usr\/local\/var\/jenkins\/*1+']
-     - /usr/local/var/jenkins/*log*[0-4]?
-     - /usr/local/var/jenkins/*log*[5-9]?
+   #  - /usr/local/var/jenkins/*log*[0-4]?
+   #  - /usr/local/var/jenkins/*log*[5-9]?
 
-   # - /tmp/test.log
+    - /tmp/test.log
   #  - /usr/local/var/log/*
     #- c:\programdata\elasticsearch\logs\*
-#slow down scan_frequency
-  scan_frequency: 5m
-# slow down how often to check if the file has been updated.
-  backoff: 5m
-  max_backoff: 1h
-# number of file harvest at the same time
-  harvester_limit: 0
-# close the file when reaching EOF
-  close_eof: true
-# close file when being inactive for 1 min
-  close_inactive: 1m
-
+#  scan_frequency: 5m
+#  backoff: 5m
+#  max_backoff: 1h
+#  harvester_limit: 0
+#  close_eof: true
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
@@ -175,9 +168,13 @@ output.elasticsearch:
   #protocol: "https"
   username: "elastic"
   password: "changeme"
-  worker: 20
-  bulk_max_size: 50
-  #bulk_max_size: 5000
+  #worker: 1
+  #worker: 4 
+  worker: 16
+  #worker: 32
+  
+  #bulk_max_size: 50
+  bulk_max_size: 5000
   #bulk_max_size: 5000000
 
 #----------------------------- Logstash output --------------------------------
