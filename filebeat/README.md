@@ -265,4 +265,4 @@ Several configuration files have been provided [here](./conf) and have been used
 - Launching 3 filebeats by using file `filebeat0-3.yml`, `filebeat4-6.yml` and `filebeat7-9.yml`
 - Launching 1 filebeat by using `filebeat-single-file.yml` and varying number of `workers`s and `bulk_size`.
 
-hose files are just provided for the record, there is nothing special here, just change and edit them and test how filebeat react. 
+Those files are just provided for the record, there is nothing special here, just change and edit them and test how filebeat react. 
