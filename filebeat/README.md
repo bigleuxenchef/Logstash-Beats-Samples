@@ -128,7 +128,11 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 
 #### Tuning the number of workers
 
-The test have been made wit h20 workers however increasing the number may not necessarily be the solution, it will depends on various factors, for that it is recommended to test several options. As example, even though all test have been done wit h20 workers, here is an example with running 3 filebeats with each 4 workers instead of 20 like before, you will see that the overall running time has improved.
+The test have been made wit h20 workers however increasing the number may not necessarily be the solution, it will depends on various factors, for that it is recommended to test several options. As example, even though all test have been done wit h20 workers, here is an example side by side with running 3 filebeats, on the left with 4 workers each while on the right with 20 workers each, there is no difference on the overall runtime even though 20 workers start faster and peak higher :
+
+<img src="./images/Profile3fb_4w-20w.png" width=100% align="middle" >
+
+
 
 
 ### Use case #5 : aggregating the files using unix script than ingesting the consolidated file.
