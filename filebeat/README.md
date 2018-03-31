@@ -173,6 +173,16 @@ In an attempt to improve filebeat performance, the test below summarizes the res
 <img src="./images/Filebeat5_SBS.png" width=100% align="middle" >
 
 
+#### Varying Bulk_size with 4-16 workers
+
+##### Profile
+
+<img src="./images/Profile5_bulksize.png" width=100% align="middle" >
+
+##### Filebeat performance
+
+<img src="./images/Filebeat5_bulksize.png" width=100% align="middle" >
+
 
 
 
